@@ -10,28 +10,42 @@
     <script src="script/animation.js" defer></script>
     <div class="main">
       <div class="content">
-        <img src="res/WebsiteIcon.png" width="128px" height="128px">
+        <img src="res/WebsiteIcon.png" width="64px" height="64px">
         <h1>Jack Skinner</h1>
-        <a href="https://www.linkedin.com/in/jack-skinner-631a2b1a1">
-          <div class="link-button">
-            <h3>LinkedIn</h3>
-          </div>
-        </a>
-        <a href="https://github.com/starskin">
-          <div class="link-button">
-            <h3>GitHub</h3>
-          </div>
-        </a>
-        <a href="https://whatpulse.org/0">
-          <div class="link-button">
-            <h3>WhatPulse</h3>
-          </div>
-        </a>
+        <div class="link-button">
+          <a href="https://www.linkedin.com/in/jack-skinner-631a2b1a1" style="max-width: 200px; margin: 0px auto;">
+            <div class="link-button">
+              <h3>LinkedIn</h3>
+            </div>
+          </a>
+        </div>
+        <div class="link-button">
+          <a href="https://github.com/starskin">
+            <div class="link-button">
+              <h3>GitHub</h3>
+            </div>
+          </a>
+        </div>
+        <div class="link-button">
+          <a href="https://whatpulse.org/0">
+            <div class="link-button">
+              <h3>WhatPulse</h3>
+            </div>
+          </a>
+        </div>
         <div>
-          <div style="background-color: #e6ebef; max-width: 200px; margin: 75px auto 0px auto;">
+          <script>
+            function copyID()
+            {
+              var idText = "05eaf1e061ebe1e8ae60cf726e24b5394b9d0f4a62658211d22da36eeeac21601e";
+              navigator.clipboard.writeText(idText);
+              alert("Session ID Copied")
+            }
+          </script>
+          <div class="link-button" style="margin: 75px auto 0px auto; cursor: copy;" onclick="copyID()">
             <h3>Session ID<h3>
           </div>
-          <p style="margin: 0 auto; max-width: 200px;">
+          <p style="margin: 0 auto; max-width: 200px;" id="sessionID">
             05eaf1e061ebe1e8ae60cf<wbr>726e24b5394b9d0f4a6265<wbr>8211d22da36eeeac21601e</p>
         </div>
       </div>
