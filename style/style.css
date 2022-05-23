@@ -2,18 +2,20 @@ body{
   height: 100%;
   text-align: center;
   margin: 0px;
-  background-color: #003050;
+  background-image: linear-gradient(#003050 75%,#000000 97.5%);
+  background-color: #000000;
+  background-repeat: no-repeat;
   font-family: "Monaco", "DejaVu Sans Mono", "Consolas", "Monospace";
   color: #809596;
 }
 a{
   text-decoration: none;
 }
-h2, h3{
-  font-family: Courier;
+h1, h2, h3{
   padding: 0px;
-  margin: 0px 0px 10px 0px;
+  margin: 0px;
   color: #809596;
+  vertical-align: middle;
 }
 .main{
   margin: 0px;
@@ -25,13 +27,16 @@ h2, h3{
   max-width: 300px;
   margin: auto;
   background-color: #555555;
-  padding: 1px 0px 20px 0px;
+  padding-bottom: 10px;
   border-radius: 10px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
 }
 .link-button{
   background-color: #e6ebef;
   max-width: 200px;
-  margin: 3px auto;
+  margin: 10px auto;
   border-radius: 7px;
 }
 .link-button:hover{
@@ -39,4 +44,32 @@ h2, h3{
 }
 .logo{
   padding: 5px;
+  width: 48px;
+  height: 48px;
+  float: left;
+}
+#heading{
+  background-color: #333333;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #000000;
+  margin-bottom: 50px;
+  margin-top: -1px;
+}
+#session-ID{
+  margin: 0px auto;
+  max-width: 175px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-style: solid;
+  border-width: thin;
+  font-family: Courier;
+  font-weight: bold;
+  font-size: 12px;
+}
+#rocket-animation{
+  margin-top: 50px;
+  margin-bottom: 100px;
+  user-select: none;
 }
