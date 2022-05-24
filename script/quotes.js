@@ -1,10 +1,3 @@
-//const fs = require('fs')
-//fs.readFile('quotes.txt', (err,quotesRaw) => {
-//  if (err) throw err;
-//});
-//var quotesRaw = quotesRaw.toString();
-//var quotes = quotesRaw.split(/\r?\n/);
-
 let quotes = [
   "Quoth the Raven “Nevermore.”\n—Edgar Allen Poe, 1845",
   "These are the times that try men's souls…yet we have this consolation with us, that the harder the conflict, the more glorious the triumph.\n—Thomas Paine, 1776",
