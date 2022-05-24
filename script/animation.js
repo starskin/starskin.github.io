@@ -15,7 +15,7 @@ let templateFrame = [
   "------*3*------",
   "-------4-------",
   " ------------- "
-].join("\n")
+].join("\n");
 var step = 0;
 let templateLength = templateFrame.length;
 var exhaustChars = ['@','#','$','%','&'];
