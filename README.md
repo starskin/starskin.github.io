@@ -1,4 +1,4 @@
 # starskin.github.io
-Personal website
+This is the source code for my personal website.
 
-Visit [here](https://jack-skinner.com/)
+You can visit it [here](https://jack-skinner.com/).
