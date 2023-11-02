@@ -1,32 +1,34 @@
-let rocketAnimationElement = document.getElementById("rocket-animation");
-let templateFrame = [
-  " ------------- ",
-  "-------^-------",
-  "------/ \\------",
-  "-----/   \\-----",
-  "-----|   |-----",
-  "-----|   |-----",
-  "-----|   |-----",
-  "-----|   |-----",
-  "----/|   |\\----",
-  "---/_|   |_\\---",
-  "-----\\___/-----",
-  "------212------",
-  "------*3*------",
-  "-------4-------",
-  " ------------- "
+// Constants
+const rocketAnimationElement = document.getElementById("rocket-animation");
+const templateFrame = [
+  " --------------- ",
+  "--------^--------",
+  "-------/ \\-------",
+  "------/   \\------",
+  "------|   |------",
+  "------|   |------",
+  "------|   |------",
+  "------|   |------",
+  "-----/|   |\\-----",
+  "----/_|   |_\\----",
+  "------\\___/------",
+  "-------101-------",
+  "-------*2*-------",
+  "--------3--------",
+  " --------------- "
 ].join("\n");
-var step = 0;
-let templateLength = templateFrame.length;
-var exhaustChars = ['@','#','$','%','&'];
-let charNum = exhaustChars.length;
-setInterval(animateRocket,100)
+const templateLength = templateFrame.length;
+const exhaustChars = ['@','#','$','%','&'];
+const charNum = exhaustChars.length;
+const sparkCount = 3; // number of sparks
+const timeInterval = 200; // time between animations [milliseconds]
 
-function getExhaustChars(stepNum){
-  let chars = [];
+// Functions
+function getExhaustChars(stepNum) {
+  const chars = [];
   for (let i = 0; i < charNum; i++) {
-    let index = stepNum - i;
-    if (index < 0){
+    let index = stepNum - 1 - i;
+    if (index < 0) {
       index = index + charNum;
     }
     chars[i] = exhaustChars[index];
@@ -34,21 +36,45 @@ function getExhaustChars(stepNum){
   return chars;
 }
 
-function animateRocket(){
-  let rocketFrame = templateFrame;
-  let chars = getExhaustChars(step);
-  let index = Math.floor(Math.random() * templateLength);
-  rocketFrame = rocketFrame.replace(/1/g, chars[0]);
-  rocketFrame = rocketFrame.replace(/2/g, chars[1]);
-  rocketFrame = rocketFrame.replace(/3/g, chars[2]);
-  rocketFrame = rocketFrame.replace(/4/g, chars[3]);
-  if (rocketFrame[index] == "-" && step == 4){
-    rocketFrame = rocketFrame.slice(0,index) + "+" + rocketFrame.slice(index + 1,templateLength);
+function getSparkIndices() {
+  const indices = [];
+  for (let i = 0; i < sparkCount; i++) {
+    indices[i] = Math.floor(Math.random() * templateLength);
   }
-  rocketAnimationElement.innerHTML = rocketFrame;
-  if (step == 4){
-    step = 0;
-  } else{
-    step = step + 1;
-  }
+  return indices;
 }
+
+// Animation
+let rocketFrame;
+let chars;
+let regex;
+let sparkIndices;
+let sparkIndex;
+var step = 1;
+function animateRocket() {
+  rocketFrame = templateFrame; // reset animation
+
+  // Insert exhaust characters
+  chars = getExhaustChars(step);
+  for (let i = 0; i < charNum; i++) {
+    regex = new RegExp("[" + i.toString() + "]","g");
+    rocketFrame = rocketFrame.replace(regex, chars[i]);
+  }
+
+  // Insert sparks
+  sparkIndices = getSparkIndices();
+  for (let i = 0; i < sparkCount; i++) {
+    let sparkIndex = sparkIndices[i];
+    if (rocketFrame[sparkIndex] == "-" && step == charNum) { // TODO: implemet incremental sparks
+      rocketFrame = rocketFrame.slice(0, sparkIndex) +
+                    "+" +
+                    rocketFrame.slice(sparkIndex + 1, templateLength);
+    } 
+  }
+
+  rocketAnimationElement.innerHTML = rocketFrame; // update animation
+
+  step == charNum ? step = 1 : step = step + 1; // increment step
+}
+
+setInterval(animateRocket, timeInterval); // set animation interval
