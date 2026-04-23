@@ -11,7 +11,10 @@ const quotes = [
   "NUTS!\n—Brig. Gen. Anthony McAuliffe, 1944",
   "Knowledge itself is power.\n—Sir Francis Bacon, 1597",
   "Eternal vigilance is the price of an open mind.\n—Henry Hazlitt, 1916",
-  "Still I hope I shall always possess firmness and virtue enough to maintain (what I consider the most enviable of all titles) the character of an honest man.\n—George Washington, 1788"
+  "Still I hope I shall always possess firmness and virtue enough to maintain (what I consider the most enviable of all titles) the character of an honest man.\n—George Washington, 1788",
+  "Nothing beside remains. Round the decay\nOf that colossal Wreck, boundless and bare\nThe lone and level sands stretch far away.\n—Percy Shelley, 1818",
+  "The woods are lovely, dark and deep,\nBut I have promises to keep,\nAnd miles to go before I sleep,\nAnd miles to go before I sleep.\n—Robert Frost, 1923",
+  "The awful daring of a moment's surrender\nWhich an age of prudence can never retract\nBy this, and this only, we have existed\n—T. S. Eliot, 1922"
 ];
 const numQuotes = quotes.length;
 
